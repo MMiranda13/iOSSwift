@@ -9,19 +9,26 @@
 import UIKit
 
 class ResultsViewController: UIViewController {
-
+    
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var settingsLabel: UILabel!
+    
+    var result = "0.0"
+    var nPeople = 0
+    var pctTip = 10
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        totalLabel.text = result
+        settingsLabel.text = "Split between \(nPeople) people, with \(pctTip)% tip."
     }
     
 
     @IBAction func recalculatePressed(_ sender: UIButton) {
-        
+        dismiss(animated: true, completion: nil)
     }
     
 
