@@ -52,6 +52,6 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
-//68423f54f0a2e864f697522078eab194
 
-// api call: https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+
+
