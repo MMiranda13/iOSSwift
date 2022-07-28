@@ -34,17 +34,16 @@ class WeatherViewController: UIViewController {
     @IBAction func locationPressed(_ sender: UIButton) {
         locationManager.requestLocation()
     }
+    
+    @IBAction func searchPressed(_ sender: UIButton) {
+        searchTextField.endEditing(true)
+        print(searchTextField.text!)
+    }
 }
 
 //MARK: - UITextFieldDelegate
 
 extension WeatherViewController: UITextFieldDelegate {
-   
-    @IBAction func searchPressed(_ sender: UIButton) {
-        searchTextField.endEditing(true)
-        print(searchTextField.text!)
-    }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //print(searchTextField.text!)
         searchTextField.endEditing(true)

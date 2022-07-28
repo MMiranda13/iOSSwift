@@ -29,6 +29,8 @@ struct WeatherManager {
         performRequest(with: urlString)
     }
     
+    /// This starts a new requeste each time gets called
+    /// - Parameter urlString: is the url the will be requested
     func performRequest(with urlString: String) {
         //1. Create URL
         
@@ -36,25 +38,31 @@ struct WeatherManager {
             //2. Create a URLSession
             let session = URLSession(configuration: .default)
             //3. Give the session a task
-            let task = session.dataTask(with: url) { (data, response, error) in
-                if error != nil {
-                    self.delegate?.didFailWithError(error: error!)
+            let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
+                if let response = response as? HTTPURLResponse {
+                    debugPrint ("Status Code: \(response.statusCode)")
+                }
+                if let error = error {
+                    self.delegate?.didFailWithError(error: error)
                     return
                 }
                 if let safeData = data {
-                    if let weather = self.parseJSON(weatherData: safeData) {
+                    if let weather = self.parseJSON(receivedData: safeData) {
                         self.delegate?.didUpdateWeather(self, weather: weather)
                     }
                 }
-            }//4. Start the task
+            })
+            
+
+            //4. Start the task
             task.resume()
         }
     }
     
-    func parseJSON(weatherData: Data) -> WeatherModel? {
+    func parseJSON(receivedData: Data) -> WeatherModel? {
         let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
+            let decodedData = try decoder.decode(WeatherData.self, from: receivedData)
             let id = decodedData.weather[0].id
             let temp = decodedData.main.temp
             let name = decodedData.name
