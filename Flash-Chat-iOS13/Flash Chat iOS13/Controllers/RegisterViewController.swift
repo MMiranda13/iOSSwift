@@ -33,7 +33,7 @@ class RegisterViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "registerGoToChat" {
+        if segue.identifier == K.registerSegue {
             let destinationVC = segue.destination as! ChatViewController
             
         }
