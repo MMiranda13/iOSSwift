@@ -99,7 +99,7 @@
                                 <rect key="frame" x="73" y="367" width="268" height="39.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zx-v9-2QS">
                                 <rect key="frame" x="115" y="99" width="185" height="62"/>
@@ -119,16 +119,47 @@
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="Galvji-Bold" family="Galvji" pointSize="30"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="registerPressed:" destination="oLE-pa-1gn" eventType="touchUpInside" id="d7P-CE-efR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eMV-cP-FHO"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="6tW-SJ-eMP"/>
+                    <connections>
+                        <outlet property="emailTextfield" destination="eT6-pD-kec" id="454-Vi-kzR"/>
+                        <outlet property="passwordTextfield" destination="Ugf-Aw-R27" id="IDX-a7-73N"/>
+                        <outlet property="usernameTextfield" destination="Irm-Oi-1sU" id="HXw-A4-EQC"/>
+                        <segue destination="NkX-r0-6nE" kind="show" identifier="registerToProfile" id="Sad-ti-UAe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uD6-sR-pGV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2084.057971014493" y="-414.50892857142856"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="wzE-UT-r0K">
+            <objects>
+                <viewController id="NkX-r0-6nE" customClass="ProfileViewController" customModule="SurfTogether" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sNF-hw-wyM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="sVH-TO-UGJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aY9-qE-KAw">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="NiE-4B-oX1">
+                            <connections>
+                                <action selector="logOutPressed:" destination="NkX-r0-6nE" id="FOa-4R-wPo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LTo-nX-o3g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3175" y="53"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="IVr-HP-wPI">
@@ -149,8 +180,11 @@
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="Galvji-Bold" family="Galvji" pointSize="30"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="loginPressed:" destination="tNS-WO-xwo" eventType="touchUpInside" id="lZD-wF-dZa"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="159-hQ-oqj">
+                            <textField opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="159-hQ-oqj">
                                 <rect key="frame" x="73" y="189" width="268" height="39.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -160,13 +194,18 @@
                                 <rect key="frame" x="73" y="302" width="268" height="39.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CZ3-on-oHE"/>
                         <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="FDO-OQ-Lww"/>
+                    <connections>
+                        <outlet property="loginEmailTextfield" destination="159-hQ-oqj" id="SgT-2N-e8n"/>
+                        <outlet property="loginPasswordTextfield" destination="jIo-Dd-bwJ" id="xg6-sr-8XH"/>
+                        <segue destination="NkX-r0-6nE" kind="show" identifier="loginToProfile" id="95D-Ye-5Or"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hC0-sh-fbm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -191,8 +230,14 @@
             <point key="canvasLocation" x="18.840579710144929" y="79.6875"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="95D-Ye-5Or"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Surf-4" width="1024" height="1024"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
