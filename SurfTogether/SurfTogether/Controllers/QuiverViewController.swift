@@ -8,22 +8,36 @@
 import UIKit
 
 class QuiverViewController: UIViewController {
-
+    
+    @IBOutlet weak var tableViewBoards: UITableView!
+    @IBOutlet weak var tableViewWetsuits: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        tableViewBoards.dataSource = self
+       // tableViewBoards.register(UINib(nibName: QuiverCell, bundle: nil), forCellReuseIdentifier: "ReusableCell")
+        tableViewBoards.layer.cornerRadius = 8
+        tableViewWetsuits.layer.cornerRadius = 8
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
 }
+
+extension QuiverViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath)
+        cell.textLabel?.text = "Surfboard"
+        return cell
+    }
+    
+    
+}
+
+

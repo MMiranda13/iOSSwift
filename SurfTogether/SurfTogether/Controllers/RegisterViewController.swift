@@ -17,19 +17,15 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var surflevelTextfield: UITextField!
     
     let db = Firestore.firestore()
-    var user = User(username: "", email: "", level: "", Friends: 0, quiver: nil)
+    var user = User(username: "", email: "", level: "", friends: 0, quiver: nil)
     
     @IBAction func registerPressed(_ sender: UIButton) {
         
         if let email = emailTextfield.text, let password = passwordTextfield.text, let username = usernameTextfield.text, let level = surflevelTextfield.text {
            
-            db.collection("users").addDocument(data: ["username": username, "email": email, "level": level]) { (error) in
-                if let e = error {
-                    print ("There was an issue saving data to Firestore, \(e)")
-                } else {
-                    print("Successfully saved data.")
-                }
-            }
+            let userToAdd = User(username: username, email: email, level: level, friends: 0, quiver: nil)
+            
+            self.addDocument(userToAdd)
             
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let e = error {
@@ -41,13 +37,14 @@ class RegisterViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
+    func addDocument(_ userReceived: User) {
+        db.collection("users").addDocument(data: ["username": userReceived.username, "email": userReceived.email, "level": userReceived.level]) { (error) in
+            if let e = error {
+                print ("There was an issue saving data to Firestore, \(e)")
+            } else {
+                print("Successfully saved data.")
+            }
+        }
     }
-    
-    
-   
     
 }

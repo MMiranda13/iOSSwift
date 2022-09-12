@@ -11,7 +11,7 @@ struct User {
     let username: String
     let email: String
     let level: String
-    let Friends : Int
+    let friends : Int
     let quiver: Quiver?
     
 }

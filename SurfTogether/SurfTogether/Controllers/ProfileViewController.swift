@@ -32,11 +32,11 @@ class ProfileViewController: UIViewController {
 //    var users: [User] = [
 //        User(username: "JosePeneda", email: "josepeneda@dea.pt", level: "Beginner", Friends: 0, quiver: nil)
 //    ]
-    var user = User(username: "JosePeneda", email: "afea", level: "ola", Friends: 0, quiver: nil)
+    var user = User(username: "JosePeneda", email: "afea", level: "ola", friends: 0, quiver: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Surf Together 🏄"
+       // title = "Surf Together 🏄"
         navigationItem.hidesBackButton = true
         topView.layer.cornerRadius = 12
         quiverView.layer.cornerRadius = 12
@@ -57,7 +57,7 @@ class ProfileViewController: UIViewController {
         
         usernameLabel.text = user.username
         levelLabel.text = user.level
-        friendsLabel.text = String(user.Friends)
+        friendsLabel.text = String(user.friends)
     }
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {

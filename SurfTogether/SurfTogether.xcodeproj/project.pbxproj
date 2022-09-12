@@ -21,6 +21,8 @@
 		1355E94628C209EF00546F57 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1355E94528C209EF00546F57 /* FirebaseStorage */; };
 		1355E94828C209EF00546F57 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 1355E94728C209EF00546F57 /* FirebaseStorageCombine-Community */; };
 		1355E94A28C2367A00546F57 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1355E94928C2367A00546F57 /* ProfileViewController.swift */; };
+		1370792028CF811000102FB0 /* QuiverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370791E28CF811000102FB0 /* QuiverCell.swift */; };
+		1370792128CF811000102FB0 /* QuiverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1370791F28CF811000102FB0 /* QuiverCell.xib */; };
 		1386A55B28C0BC8E00BE7818 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1386A55A28C0BC8E00BE7818 /* AppDelegate.swift */; };
 		1386A55D28C0BC8E00BE7818 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1386A55C28C0BC8E00BE7818 /* SceneDelegate.swift */; };
 		1386A55F28C0BC8E00BE7818 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1386A55E28C0BC8E00BE7818 /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 		1314A85828CA1E9E0070ADA6 /* Quiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiver.swift; sourceTree = "<group>"; };
 		1355E93428C2084200546F57 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1355E94928C2367A00546F57 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		1370791E28CF811000102FB0 /* QuiverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuiverCell.swift; sourceTree = "<group>"; };
+		1370791F28CF811000102FB0 /* QuiverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuiverCell.xib; sourceTree = "<group>"; };
 		1386A55728C0BC8E00BE7818 /* SurfTogether.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurfTogether.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1386A55A28C0BC8E00BE7818 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1386A55C28C0BC8E00BE7818 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				1386A56028C0BC8E00BE7818 /* Main.storyboard */,
+				1370791E28CF811000102FB0 /* QuiverCell.swift */,
+				1370791F28CF811000102FB0 /* QuiverCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,6 +212,7 @@
 				1355E93528C2084200546F57 /* GoogleService-Info.plist in Resources */,
 				1386A56428C0BC9000BE7818 /* Assets.xcassets in Resources */,
 				1386A56228C0BC8E00BE7818 /* Main.storyboard in Resources */,
+				1370792128CF811000102FB0 /* QuiverCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +226,7 @@
 				1314A85728CA034E0070ADA6 /* User.swift in Sources */,
 				1355E94A28C2367A00546F57 /* ProfileViewController.swift in Sources */,
 				1386A55F28C0BC8E00BE7818 /* ViewController.swift in Sources */,
+				1370792028CF811000102FB0 /* QuiverCell.swift in Sources */,
 				1386A55B28C0BC8E00BE7818 /* AppDelegate.swift in Sources */,
 				1314A85928CA1E9E0070ADA6 /* Quiver.swift in Sources */,
 				1386A55D28C0BC8E00BE7818 /* SceneDelegate.swift in Sources */,
