@@ -22,7 +22,7 @@ class RegisterViewController: UIViewController {
     @IBAction func registerPressed(_ sender: UIButton) {
         
         if let email = emailTextfield.text, let password = passwordTextfield.text, let username = usernameTextfield.text, let level = surflevelTextfield.text {
-           
+            
             let userToAdd = User(username: username, email: email, level: level, friends: 0, quiver: nil)
             
             self.addDocument(userToAdd)

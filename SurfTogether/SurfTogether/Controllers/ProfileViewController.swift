@@ -26,17 +26,17 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var friendsLabel: UILabel!
     
     //let userEmail = Auth.auth().currentUser?.email
-   
+    
     let db = Firestore.firestore()
     
-//    var users: [User] = [
-//        User(username: "JosePeneda", email: "josepeneda@dea.pt", level: "Beginner", Friends: 0, quiver: nil)
-//    ]
+    //    var users: [User] = [
+    //        User(username: "JosePeneda", email: "josepeneda@dea.pt", level: "Beginner", Friends: 0, quiver: nil)
+    //    ]
     var user = User(username: "JosePeneda", email: "afea", level: "ola", friends: 0, quiver: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // title = "Surf Together 🏄"
+        // title = "Surf Together 🏄"
         navigationItem.hidesBackButton = true
         topView.layer.cornerRadius = 12
         quiverView.layer.cornerRadius = 12
@@ -49,9 +49,9 @@ class ProfileViewController: UIViewController {
         loadUser()
     }
     
-  //  func addUser(){
-        //db.collection("users").addDocument(data: <#T##[String : Any]#>, completion: <#T##((Error?) -> Void)?#>)
-  //  }
+    //  func addUser(){
+    //db.collection("users").addDocument(data: <#T##[String : Any]#>, completion: <#T##((Error?) -> Void)?#>)
+    //  }
     
     func loadUser() {
         
@@ -70,16 +70,4 @@ class ProfileViewController: UIViewController {
         }
         
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

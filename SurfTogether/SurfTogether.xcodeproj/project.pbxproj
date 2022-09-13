@@ -31,6 +31,7 @@
 		1386A56728C0BC9000BE7818 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1386A56528C0BC9000BE7818 /* LaunchScreen.storyboard */; };
 		1386A56F28C0F12900BE7818 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1386A56E28C0F12900BE7818 /* RegisterViewController.swift */; };
 		1386A57128C10A2600BE7818 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1386A57028C10A2600BE7818 /* LoginViewController.swift */; };
+		138B771728D09DB40083F394 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138B771628D09DB40083F394 /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		1386A56828C0BC9000BE7818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1386A56E28C0F12900BE7818 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		1386A57028C10A2600BE7818 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		138B771628D09DB40083F394 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				1386A57028C10A2600BE7818 /* LoginViewController.swift */,
 				1355E94928C2367A00546F57 /* ProfileViewController.swift */,
 				1314A85128C9E4410070ADA6 /* QuiverViewController.swift */,
+				138B771628D09DB40083F394 /* AddViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				1314A85728CA034E0070ADA6 /* User.swift in Sources */,
 				1355E94A28C2367A00546F57 /* ProfileViewController.swift in Sources */,
 				1386A55F28C0BC8E00BE7818 /* ViewController.swift in Sources */,
+				138B771728D09DB40083F394 /* AddViewController.swift in Sources */,
 				1370792028CF811000102FB0 /* QuiverCell.swift in Sources */,
 				1386A55B28C0BC8E00BE7818 /* AppDelegate.swift in Sources */,
 				1314A85928CA1E9E0070ADA6 /* Quiver.swift in Sources */,
