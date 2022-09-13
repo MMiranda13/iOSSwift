@@ -6,11 +6,11 @@
 //
 
 import Foundation
-
-struct Quiver {
-    let size: Float
-    let brand: String
-    let model: String
-    let wetsuit: String
-}
+//
+//struct Quiver {
+//    let size: Float
+//    let brand: String
+//    let model: String
+//    let wetsuit: String
+//}
 

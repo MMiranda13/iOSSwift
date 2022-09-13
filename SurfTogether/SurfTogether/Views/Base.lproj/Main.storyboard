@@ -156,6 +156,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="3LS-vH-oAV">
+                                <rect key="frame" x="197" y="443" width="20" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eMV-cP-FHO"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
@@ -168,6 +172,8 @@
                             <constraint firstItem="Ugf-Aw-R27" firstAttribute="top" secondItem="eT6-pD-kec" secondAttribute="bottom" constant="40" id="E2f-a2-WKv"/>
                             <constraint firstItem="3jq-IK-TGK" firstAttribute="leading" secondItem="eMV-cP-FHO" secondAttribute="leading" constant="56" id="JFK-gO-1VS"/>
                             <constraint firstItem="3jq-IK-TGK" firstAttribute="centerX" secondItem="eMV-cP-FHO" secondAttribute="centerX" id="Lvh-Qa-ewa"/>
+                            <constraint firstItem="3LS-vH-oAV" firstAttribute="centerY" secondItem="eMV-cP-FHO" secondAttribute="centerY" id="RXf-Ta-m6z"/>
+                            <constraint firstItem="3LS-vH-oAV" firstAttribute="centerX" secondItem="eMV-cP-FHO" secondAttribute="centerX" id="SeS-hg-g1e"/>
                             <constraint firstItem="Xir-Ao-fp9" firstAttribute="top" secondItem="Ugf-Aw-R27" secondAttribute="bottom" constant="80" id="dih-FC-THa"/>
                             <constraint firstItem="Irm-Oi-1sU" firstAttribute="top" secondItem="3jq-IK-TGK" secondAttribute="bottom" constant="40" id="e1c-hY-c5I"/>
                             <constraint firstItem="eT6-pD-kec" firstAttribute="centerX" secondItem="eMV-cP-FHO" secondAttribute="centerX" id="gBr-Mb-jL5"/>
@@ -184,6 +190,7 @@
                     <navigationItem key="navigationItem" id="6tW-SJ-eMP"/>
                     <connections>
                         <outlet property="emailTextfield" destination="eT6-pD-kec" id="454-Vi-kzR"/>
+                        <outlet property="loadingView" destination="3LS-vH-oAV" id="AKy-AU-B4d"/>
                         <outlet property="passwordTextfield" destination="Ugf-Aw-R27" id="IDX-a7-73N"/>
                         <outlet property="surflevelTextfield" destination="3jq-IK-TGK" id="ftX-NI-beT"/>
                         <outlet property="usernameTextfield" destination="Irm-Oi-1sU" id="HXw-A4-EQC"/>
@@ -587,7 +594,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="95D-Ye-5Or"/>
+        <segue reference="Sad-ti-UAe"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Calendar" width="367" height="281"/>

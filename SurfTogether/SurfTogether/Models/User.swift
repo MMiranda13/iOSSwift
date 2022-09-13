@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct User {
-    let username: String
-    let email: String
-    let level: String
-    let friends : Int
-    let quiver: Quiver?
-    
-}
+//struct User {
+//    let username: String
+//    let email: String
+//    let level: String
+//    let friends : Int
+//    let quiver: Quiver?
+//    
+//}
 
 

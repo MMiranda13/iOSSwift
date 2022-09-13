@@ -57,7 +57,7 @@ class ProfileViewController: UIViewController {
         
         usernameLabel.text = user.username
         levelLabel.text = user.level
-        friendsLabel.text = String(user.friends)
+        friendsLabel.text = "\(user.friends ?? 0)"
     }
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
