@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1314A85228C9E4410070ADA6 /* QuiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1314A85128C9E4410070ADA6 /* QuiverViewController.swift */; };
-		1314A85728CA034E0070ADA6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1314A85628CA034E0070ADA6 /* User.swift */; };
-		1314A85928CA1E9E0070ADA6 /* Quiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1314A85828CA1E9E0070ADA6 /* Quiver.swift */; };
+		133AA0B528D88593007C672B /* iOSDropDown in Frameworks */ = {isa = PBXBuildFile; productRef = 133AA0B428D88593007C672B /* iOSDropDown */; };
 		1355E93528C2084200546F57 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1355E93428C2084200546F57 /* GoogleService-Info.plist */; };
 		1355E93828C209EF00546F57 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1355E93728C209EF00546F57 /* FirebaseAuth */; };
 		1355E93A28C209EF00546F57 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 1355E93928C209EF00546F57 /* FirebaseAuthCombine-Community */; };
@@ -37,8 +36,6 @@
 
 /* Begin PBXFileReference section */
 		1314A85128C9E4410070ADA6 /* QuiverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuiverViewController.swift; sourceTree = "<group>"; };
-		1314A85628CA034E0070ADA6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		1314A85828CA1E9E0070ADA6 /* Quiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiver.swift; sourceTree = "<group>"; };
 		1355E93428C2084200546F57 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1355E94928C2367A00546F57 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1370791E28CF811000102FB0 /* QuiverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuiverCell.swift; sourceTree = "<group>"; };
@@ -63,6 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1355E93E28C209EF00546F57 /* FirebaseDatabaseSwift in Frameworks */,
+				133AA0B528D88593007C672B /* iOSDropDown in Frameworks */,
 				1355E93C28C209EF00546F57 /* FirebaseDatabase in Frameworks */,
 				1355E93828C209EF00546F57 /* FirebaseAuth in Frameworks */,
 				1355E94428C209EF00546F57 /* FirebaseFirestoreSwift in Frameworks */,
@@ -80,8 +78,6 @@
 		1314A85328CA02290070ADA6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1314A85628CA034E0070ADA6 /* User.swift */,
-				1314A85828CA1E9E0070ADA6 /* Quiver.swift */,
 				138B771828D0B62A0083F394 /* UserModels.swift */,
 			);
 			path = Models;
@@ -168,6 +164,7 @@
 				1355E94328C209EF00546F57 /* FirebaseFirestoreSwift */,
 				1355E94528C209EF00546F57 /* FirebaseStorage */,
 				1355E94728C209EF00546F57 /* FirebaseStorageCombine-Community */,
+				133AA0B428D88593007C672B /* iOSDropDown */,
 			);
 			productName = SurfTogether;
 			productReference = 1386A55728C0BC8E00BE7818 /* SurfTogether.app */;
@@ -199,6 +196,7 @@
 			mainGroup = 1386A54E28C0BC8E00BE7818;
 			packageReferences = (
 				1355E93628C209EF00546F57 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				133AA0B328D88593007C672B /* XCRemoteSwiftPackageReference "iOSDropDown" */,
 			);
 			productRefGroup = 1386A55828C0BC8E00BE7818 /* Products */;
 			projectDirPath = "";
@@ -229,13 +227,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1314A85728CA034E0070ADA6 /* User.swift in Sources */,
 				1355E94A28C2367A00546F57 /* ProfileViewController.swift in Sources */,
 				1386A55F28C0BC8E00BE7818 /* ViewController.swift in Sources */,
 				138B771728D09DB40083F394 /* AddViewController.swift in Sources */,
 				1370792028CF811000102FB0 /* QuiverCell.swift in Sources */,
 				1386A55B28C0BC8E00BE7818 /* AppDelegate.swift in Sources */,
-				1314A85928CA1E9E0070ADA6 /* Quiver.swift in Sources */,
 				1386A55D28C0BC8E00BE7818 /* SceneDelegate.swift in Sources */,
 				1386A57128C10A2600BE7818 /* LoginViewController.swift in Sources */,
 				1314A85228C9E4410070ADA6 /* QuiverViewController.swift in Sources */,
@@ -460,6 +456,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		133AA0B328D88593007C672B /* XCRemoteSwiftPackageReference "iOSDropDown" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jriosdev/iOSDropDown.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.0;
+			};
+		};
 		1355E93628C209EF00546F57 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -471,6 +475,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		133AA0B428D88593007C672B /* iOSDropDown */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 133AA0B328D88593007C672B /* XCRemoteSwiftPackageReference "iOSDropDown" */;
+			productName = iOSDropDown;
+		};
 		1355E93728C209EF00546F57 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1355E93628C209EF00546F57 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

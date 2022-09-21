@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
+import SwiftUI
 
 class ProfileViewController: UIViewController {
     
@@ -24,18 +25,19 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var friendsLabel: UILabel!
-    
-    //let userEmail = Auth.auth().currentUser?.email
+    @IBOutlet weak var activity: UIActivityIndicatorView!
+    @IBOutlet weak var alphaLayer: UIVisualEffectView?
     
     let db = Firestore.firestore()
     
-    //    var users: [User] = [
-    //        User(username: "JosePeneda", email: "josepeneda@dea.pt", level: "Beginner", Friends: 0, quiver: nil)
-    //    ]
-    var user = User(username: "JosePeneda", email: "afea", level: "ola", friends: 0, quiver: nil)
+        var users: [User] = [
+            User(username: "", email: "", level: "", friends: 0)
+        ]
+   // var user = User(username: "JosePeneda", email: "afea", level: "ola", friends: 0, quiver: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // title = "Surf Together 🏄"
         navigationItem.hidesBackButton = true
         topView.layer.cornerRadius = 12
@@ -46,18 +48,57 @@ class ProfileViewController: UIViewController {
         forecastButton.layer.cornerRadius = 12
         calendarButton.layer.cornerRadius = 12
         
+        showLoading(true)
+        
         loadUser()
     }
     
-    //  func addUser(){
-    //db.collection("users").addDocument(data: <#T##[String : Any]#>, completion: <#T##((Error?) -> Void)?#>)
-    //  }
+    func showLoading(_ show: Bool) {
+        if show {
+            alphaLayer?.isHidden = false
+            activity.startAnimating()
+        } else {
+            activity.stopAnimating()
+            
+        }
+        
+        let animationDuration = show ? 0.0 : 0.66666
+        
+        UIView.animate(withDuration: animationDuration, animations: { [weak self] in
+            self?.alphaLayer?.alpha = show ? 1.0 : 0.0
+        }, completion: { [weak self] _ in
+            self?.alphaLayer?.isHidden = !show
+        })
+        
+    }
     
     func loadUser() {
+        guard let email = Auth.auth().currentUser?.email else {
+            debugPrint("No email on Auth")
+            return
+        }
         
-        usernameLabel.text = user.username
-        levelLabel.text = user.level
-        friendsLabel.text = "\(user.friends ?? 0)"
+        db.collection("users").whereField("email", isEqualTo: email).getDocuments(completion: { [weak self] (querySnapshot, error) in
+            guard let self = self else { return }
+            
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else if let querySnapshot = querySnapshot {
+                for document in querySnapshot.documents {
+                    
+                    if let usernameLab = document.get("username") as? String,
+                       let levelLab = document.get("level") as? String {
+                        
+                        self.usernameLabel.text = "Username: \(usernameLab)"
+                        self.levelLabel.text = "Surf Level: \(levelLab)"
+                        self.friendsLabel.text = "Friends: 0"
+                        print("Query was Sucessfull")
+                    }
+                }
+            }
+            
+            self.showLoading(false)
+        })
     }
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
@@ -70,4 +111,7 @@ class ProfileViewController: UIViewController {
         }
         
     }
+
 }
+
+

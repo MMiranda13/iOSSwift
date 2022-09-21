@@ -12,13 +12,23 @@ struct User {
     let email: String
     let level: String
     let friends: Int?
-    let quiver: Quiver?
+    //let quiver: Quiver?
     
 }
 
-struct Quiver {
-    let size: Float
+struct Quiver: Decodable {
+    let size: String
     let brand: String
     let model: String
-    let wetsuit: String
+    let dateField: TimeInterval
+    let wetsuit: Wetsuit?
+}
+
+struct Wetsuit: Decodable {
+    let brand: String
+    let thickness: String
+}
+
+struct Docid {
+    static var userID = "something"
 }

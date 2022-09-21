@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class LoginViewController: UIViewController {
     
@@ -14,6 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginEmailTextfield: UITextField!
     @IBOutlet weak var loginPasswordTextfield: UITextField!
     
+    let db = Firestore.firestore()
     
     @IBAction func loginPressed(_ sender: UIButton) {
         
@@ -23,10 +25,24 @@ class LoginViewController: UIViewController {
                     print(e)
                     
                 } else {
-                    
+                    self.getIdDoc()
                     self.performSegue(withIdentifier:"loginToProfile" , sender: self)
                 }
             }
         }
     }
+    func getIdDoc () {
+        db.collection("users").whereField("email", isEqualTo: Auth.auth().currentUser?.email).getDocuments(completion: { ( querySnapshot, Error) in
+            if let Error = Error {
+                print("Error getting documents: \(Error)")
+            } else {
+                for document in querySnapshot!.documents {
+                    let docID = document.documentID
+                    Docid.userID = docID
+                    print("\(docID)")
+                }
+            }
+        })
+    }
+    
 }

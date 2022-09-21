@@ -10,8 +10,8 @@ import UIKit
 class QuiverCell: UITableViewCell {
 
     @IBOutlet weak var boardCell: UIView!
-    @IBOutlet weak var sizeLabel: UILabel!
     @IBOutlet weak var brandLabel: UILabel!
+    @IBOutlet weak var sizeLabel: UILabel!
     @IBOutlet weak var modelLabel: UILabel!
     
     
