@@ -17,11 +17,14 @@ class AddViewController: UIViewController {
     @IBOutlet weak var brandTextfield: UITextField!
     @IBOutlet weak var modelTextfield: UITextField!
     
-    @IBOutlet weak var wetsuitTextfield: UITextField!
+    @IBOutlet weak var thicknessTextfield: UITextField!
+    @IBOutlet weak var brandModelTextfield: UITextField!
+    
     
     
     let db = Firestore.firestore()
-    var quiver = Quiver(size: "0.0", brand: "", model: "", dateField: Date().timeIntervalSince1970, wetsuit: nil)
+    var quiver = Quiver(size: "0.0", brand: "", model: "", dateField: Date().timeIntervalSince1970)
+    var wetsuit = Wetsuit(brandModel: "", thickness: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,10 +53,28 @@ class AddViewController: UIViewController {
         }
     }
     
-
-
+    @IBAction func addWetsuitPressed(_ sender: UIButton) {
+        if let thickness = thicknessTextfield.text, let brandModel = brandModelTextfield.text {
+        
+            db.collection("users").document(Docid.userID).collection("wetsuit")
+                .addDocument(data:
+                                ["thickness": thickness, "brandModel": brandModel],
+                             completion: { [weak self] (error) in
+                if let error = error {
+                    print("There was an issue saving data to firestore, \(error)")
+                } else {
+                    print("Successfully saved data.")
+                }
+                
+                DispatchQueue.main.async { [weak self] in
+                    self?.dismiss(animated: true)
+                }
+            })
+            
+    }
+    
 }
 
-
+}
 
 

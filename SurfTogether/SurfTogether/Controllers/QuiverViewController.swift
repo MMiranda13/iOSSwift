@@ -16,66 +16,96 @@ class QuiverViewController: UIViewController {
     let db = Firestore.firestore()
     var quivers = [Quiver]()
     var wetsuits = [Wetsuit]()
-    var listener: ListenerRegistration?
+    var listeners = [ListenerRegistration]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // method to tell the table view how to create new cells.
         tableViewBoards.register(UITableViewCell.self, forCellReuseIdentifier: "ReusableCell")
         tableViewBoards.dataSource = self
         tableViewBoards.layer.cornerRadius = 8
         
+        // method to tell the table view how to create new cells.
         tableViewWetsuits.register(UITableViewCell.self, forCellReuseIdentifier: "WetsuitCell")
         tableViewWetsuits.dataSource = self
         tableViewWetsuits.layer.cornerRadius = 8
         
+        // registration of the new nib cell created so the table view starts to use
         tableViewBoards.register(UINib(nibName: "QuiverCell", bundle: nil), forCellReuseIdentifier: "QuiverReusableCell")
+        tableViewWetsuits.register(UINib(nibName:"WetsuitCell", bundle: nil), forCellReuseIdentifier: "WetsuitReusableCell")
         
         setupBindings()
     }
     
     func setupBindings() {
-        listener = db.collection("users").document(Docid.userID).collection("quiver").addSnapshotListener { [weak self] (querySnapshot, error) in
-            guard let self = self else { return }
-            
-            if let error = error {
-                print("Error getting documents: \(error)")
-            } else {
-                self.queryParsing(querySnapshot)
+        guard listeners.isEmpty else { return }
+        
+        // adds listener to a document that creates a snapshot and everytime its called and everytime the doc changes.
+        listeners.append(
+            db.collection("users").document(Docid.userID).collection("quiver").addSnapshotListener { [weak self] (querySnapshot, error) in
+                guard let self = self else { return }
+                
+                if let error = error {
+                    print("Error getting documents: \(error)")
+                } else {
+                    let received = self.queryParsing(query: querySnapshot, type: Quiver.self)
+                    //   organizing the array values per date
+                    self.quivers = received.sorted { elem1, elemt2 in
+                        elem1.dateField < elemt2.dateField
+                    }
+                    
+                    DispatchQueue.main.async { [weak self] in
+                        self?.reloadTables()
+                    }
+                }
             }
-        }
+        )
+        
+        listeners.append(
+            db.collection("users").document(Docid.userID).collection("wetsuit").addSnapshotListener { [weak self] (querySnapshot, error) in
+                guard let self = self else { return }
+                
+                if let error = error {
+                    print("Error getting wetsuit documents: \(error)")
+                } else {
+                    print("\(self.wetsuits)")
+                    
+                    self.wetsuits = self.queryParsing(query: querySnapshot, type: Wetsuit.self)
+                    DispatchQueue.main.async { [weak self] in
+                        self?.reloadTables()
+                    }
+                }
+            }
+        )
+        
     }
     
-    func queryParsing(_ query: QuerySnapshot?) {
-        wetsuits = [Wetsuit]()
+    func queryParsing<Object: Decodable>(query: QuerySnapshot?, type: Object.Type) ->[Object] {
         
+        var received = [Object]()
         if let documents = query?.documents {
-            var received = [Quiver]()
+            
+            // for loop to search in determinate collection or document
             for document in documents {
                 
                 if let jsonData = try? JSONSerialization.data(withJSONObject: document.data(),
                                                               options: []),
-                   let quiver = try? JSONDecoder().decode(Quiver.self, from: jsonData) {
-                    received.append(quiver)
+                   let parsedObject = try? JSONDecoder().decode(Object.self, from: jsonData) {
+                    received.append(parsedObject)
                     
-                    if let wetsuit = quiver.wetsuit {
-                        wetsuits.append(wetsuit)
-                    }
                 }
             }
             
-            quivers = received.sorted { elem1, elemt2 in
-                elem1.dateField < elemt2.dateField
-            }
             
-            print("Query was sucessful, \n\(quivers)")
+            print("Query was sucessful")
             
-            DispatchQueue.main.async { [weak self] in
-                self?.reloadTables()
-            }
+            
         } else {
             debugPrint("nothing to show")
         }
+        
+        return received
     }
     
     func reloadTables() {
@@ -102,13 +132,12 @@ extension QuiverViewController: UITableViewDataSource {
             
             return cell
         } else {
-            guard indexPath.row < wetsuits.count else { return UITableViewCell() }
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "WetsuitCell", for: indexPath)
+            guard indexPath.row < wetsuits.count, let cell = tableView.dequeueReusableCell(withIdentifier: "WetsuitReusableCell", for: indexPath) as? WetsuitCell else { return UITableViewCell() }
             
             let wetsuit = wetsuits[indexPath.row]
             
-            cell.textLabel?.text = wetsuit.brand
+            cell.thicknessLabel.text = wetsuit.thickness
+            cell.brandModelLabel.text = wetsuit.brandModel
             
             return cell
         }
@@ -116,7 +145,3 @@ extension QuiverViewController: UITableViewDataSource {
 }
 
 //ADICIONAR DELEGATE PARA ANIMAR SELEÇÃO DAS ROWS
-
-
-
-

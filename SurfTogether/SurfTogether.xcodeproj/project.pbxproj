@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1314A85228C9E4410070ADA6 /* QuiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1314A85128C9E4410070ADA6 /* QuiverViewController.swift */; };
+		131A407828EC811E00844041 /* ForecastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131A407728EC811E00844041 /* ForecastManager.swift */; };
 		133AA0B528D88593007C672B /* iOSDropDown in Frameworks */ = {isa = PBXBuildFile; productRef = 133AA0B428D88593007C672B /* iOSDropDown */; };
 		1355E93528C2084200546F57 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1355E93428C2084200546F57 /* GoogleService-Info.plist */; };
 		1355E93828C209EF00546F57 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1355E93728C209EF00546F57 /* FirebaseAuth */; };
@@ -20,6 +21,7 @@
 		1355E94628C209EF00546F57 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1355E94528C209EF00546F57 /* FirebaseStorage */; };
 		1355E94828C209EF00546F57 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 1355E94728C209EF00546F57 /* FirebaseStorageCombine-Community */; };
 		1355E94A28C2367A00546F57 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1355E94928C2367A00546F57 /* ProfileViewController.swift */; };
+		135D222F28E5E84D0016C36C /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135D222E28E5E84D0016C36C /* ForecastViewController.swift */; };
 		1370792028CF811000102FB0 /* QuiverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370791E28CF811000102FB0 /* QuiverCell.swift */; };
 		1370792128CF811000102FB0 /* QuiverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1370791F28CF811000102FB0 /* QuiverCell.xib */; };
 		1386A55B28C0BC8E00BE7818 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1386A55A28C0BC8E00BE7818 /* AppDelegate.swift */; };
@@ -32,12 +34,17 @@
 		1386A57128C10A2600BE7818 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1386A57028C10A2600BE7818 /* LoginViewController.swift */; };
 		138B771728D09DB40083F394 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138B771628D09DB40083F394 /* AddViewController.swift */; };
 		138B771928D0B62A0083F394 /* UserModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138B771828D0B62A0083F394 /* UserModels.swift */; };
+		13B7277528DB63140019F2FD /* WetsuitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7277328DB63140019F2FD /* WetsuitCell.swift */; };
+		13B7277628DB63140019F2FD /* WetsuitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B7277428DB63140019F2FD /* WetsuitCell.xib */; };
+		13C529F428E1EECB00CA0C4E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C529F328E1EECB00CA0C4E /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1314A85128C9E4410070ADA6 /* QuiverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuiverViewController.swift; sourceTree = "<group>"; };
+		131A407728EC811E00844041 /* ForecastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastManager.swift; sourceTree = "<group>"; };
 		1355E93428C2084200546F57 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1355E94928C2367A00546F57 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		135D222E28E5E84D0016C36C /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
 		1370791E28CF811000102FB0 /* QuiverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuiverCell.swift; sourceTree = "<group>"; };
 		1370791F28CF811000102FB0 /* QuiverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuiverCell.xib; sourceTree = "<group>"; };
 		1386A55728C0BC8E00BE7818 /* SurfTogether.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurfTogether.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +59,9 @@
 		1386A57028C10A2600BE7818 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		138B771628D09DB40083F394 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		138B771828D0B62A0083F394 /* UserModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModels.swift; sourceTree = "<group>"; };
+		13B7277328DB63140019F2FD /* WetsuitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WetsuitCell.swift; sourceTree = "<group>"; };
+		13B7277428DB63140019F2FD /* WetsuitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WetsuitCell.xib; sourceTree = "<group>"; };
+		13C529F328E1EECB00CA0C4E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				138B771828D0B62A0083F394 /* UserModels.swift */,
+				131A407728EC811E00844041 /* ForecastManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -92,6 +103,8 @@
 				1355E94928C2367A00546F57 /* ProfileViewController.swift */,
 				1314A85128C9E4410070ADA6 /* QuiverViewController.swift */,
 				138B771628D09DB40083F394 /* AddViewController.swift */,
+				13C529F328E1EECB00CA0C4E /* SettingsViewController.swift */,
+				135D222E28E5E84D0016C36C /* ForecastViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -102,6 +115,8 @@
 				1386A56028C0BC8E00BE7818 /* Main.storyboard */,
 				1370791E28CF811000102FB0 /* QuiverCell.swift */,
 				1370791F28CF811000102FB0 /* QuiverCell.xib */,
+				13B7277328DB63140019F2FD /* WetsuitCell.swift */,
+				13B7277428DB63140019F2FD /* WetsuitCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,6 +230,7 @@
 				1386A56728C0BC9000BE7818 /* LaunchScreen.storyboard in Resources */,
 				1355E93528C2084200546F57 /* GoogleService-Info.plist in Resources */,
 				1386A56428C0BC9000BE7818 /* Assets.xcassets in Resources */,
+				13B7277628DB63140019F2FD /* WetsuitCell.xib in Resources */,
 				1386A56228C0BC8E00BE7818 /* Main.storyboard in Resources */,
 				1370792128CF811000102FB0 /* QuiverCell.xib in Resources */,
 			);
@@ -227,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13B7277528DB63140019F2FD /* WetsuitCell.swift in Sources */,
 				1355E94A28C2367A00546F57 /* ProfileViewController.swift in Sources */,
 				1386A55F28C0BC8E00BE7818 /* ViewController.swift in Sources */,
 				138B771728D09DB40083F394 /* AddViewController.swift in Sources */,
@@ -236,7 +253,10 @@
 				1386A57128C10A2600BE7818 /* LoginViewController.swift in Sources */,
 				1314A85228C9E4410070ADA6 /* QuiverViewController.swift in Sources */,
 				138B771928D0B62A0083F394 /* UserModels.swift in Sources */,
+				131A407828EC811E00844041 /* ForecastManager.swift in Sources */,
 				1386A56F28C0F12900BE7818 /* RegisterViewController.swift in Sources */,
+				135D222F28E5E84D0016C36C /* ForecastViewController.swift in Sources */,
+				13C529F428E1EECB00CA0C4E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

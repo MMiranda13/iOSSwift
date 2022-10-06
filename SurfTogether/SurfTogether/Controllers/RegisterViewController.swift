@@ -8,30 +8,45 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
-import iOSDropDown
+//import iOSDropDown
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource {
+   
+    
     
     @IBOutlet weak var usernameTextfield: UITextField!
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
-    @IBOutlet weak var surflevelTextfield: UITextField!
+
+    @IBOutlet weak var surfLevelTextfield: UITextField!
     
     @IBOutlet weak var loadingView: UIActivityIndicatorView!
     
-    @IBOutlet weak var dropDown: DropDown!
+    let surflevel = ["Beginner","Intermediate","Advanced","Pro"]
+    var pickerView = UIPickerView()
     
     let db = Firestore.firestore()
     var user = User(username: "", email: "", level: "", friends: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dropDown.optionArray = ["Beginner","Intermediate","Advanced","Pro"]
+      
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        surfLevelTextfield.isSelected = true
+        surfLevelTextfield.inputView = pickerView
+        
     }
     
+    
+    
     @IBAction func registerPressed(_ sender: UIButton) {
+    
+        if !surflevel.contains(surfLevelTextfield.text!){
+            resetUI()
+        }
         
-        if let email = emailTextfield.text, let password = passwordTextfield.text, let username = usernameTextfield.text, let level = dropDown.text {
+        if let email = emailTextfield.text, let password = passwordTextfield.text, let username = usernameTextfield.text, let level = surfLevelTextfield.text {
             
             loadingView.startAnimating()
             
@@ -99,7 +114,25 @@ class RegisterViewController: UIViewController {
         usernameTextfield.text = ""
         emailTextfield.text = ""
         passwordTextfield.text = ""
-        surflevelTextfield.text = ""
+        surfLevelTextfield.text = ""
     }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return surflevel.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+        {
+          return surflevel[row]
+        }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+        {
+            surfLevelTextfield.text = surflevel[row]
+            surfLevelTextfield.resignFirstResponder()
+        }
     
 }

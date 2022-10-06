@@ -21,6 +21,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var quiverButton: UIButton!
     @IBOutlet weak var forecastButton: UIButton!
     @IBOutlet weak var calendarButton: UIButton!
+    @IBOutlet weak var gearButton: UIButton!
+    
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
@@ -111,7 +113,11 @@ class ProfileViewController: UIViewController {
         }
         
     }
-
+    
+    
+    @IBAction func settingsButtonPressed(_ sender: UIButton) {
+    }
+    
 }
 
 
