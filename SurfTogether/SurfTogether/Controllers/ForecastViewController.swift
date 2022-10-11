@@ -9,7 +9,10 @@ import UIKit
 
 class ForecastViewController: UIViewController {
 
+    var forecastManager = ForecastManager()
     
+    
+
     @IBOutlet weak var swellDirectionView: UIView!
     @IBOutlet weak var waveHeightView: UIView!
     @IBOutlet weak var wavePeriodView: UIView!
@@ -28,7 +31,7 @@ class ForecastViewController: UIViewController {
         waveHeightView.layer.cornerRadius = 12
         wavePeriodView.layer.cornerRadius = 12
         windView.layer.cornerRadius = 12
-        
+        forecastManager.fetchForecast()
        // rulerImage.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
     }
     

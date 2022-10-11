@@ -37,6 +37,7 @@
 		13B7277528DB63140019F2FD /* WetsuitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7277328DB63140019F2FD /* WetsuitCell.swift */; };
 		13B7277628DB63140019F2FD /* WetsuitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B7277428DB63140019F2FD /* WetsuitCell.xib */; };
 		13C529F428E1EECB00CA0C4E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C529F328E1EECB00CA0C4E /* SettingsViewController.swift */; };
+		13FC78FF28F0790E000C355F /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC78FE28F0790E000C355F /* ForecastData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		13B7277328DB63140019F2FD /* WetsuitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WetsuitCell.swift; sourceTree = "<group>"; };
 		13B7277428DB63140019F2FD /* WetsuitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WetsuitCell.xib; sourceTree = "<group>"; };
 		13C529F328E1EECB00CA0C4E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		13FC78FE28F0790E000C355F /* ForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				138B771828D0B62A0083F394 /* UserModels.swift */,
 				131A407728EC811E00844041 /* ForecastManager.swift */,
+				13FC78FE28F0790E000C355F /* ForecastData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				131A407828EC811E00844041 /* ForecastManager.swift in Sources */,
 				1386A56F28C0F12900BE7818 /* RegisterViewController.swift in Sources */,
 				135D222F28E5E84D0016C36C /* ForecastViewController.swift in Sources */,
+				13FC78FF28F0790E000C355F /* ForecastData.swift in Sources */,
 				13C529F428E1EECB00CA0C4E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
