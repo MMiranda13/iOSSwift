@@ -7,20 +7,21 @@
 
 import Foundation
 
-struct ForecastData: Decodable {
+struct ForecastData: Codable {
     let data: FData
 
 }
 
-struct FData: Decodable {
+struct FData: Codable {
     let weather: [Weather]
 }
 
-struct Weather: Decodable {
+struct Weather: Codable {
     let hourly: [Hourly]
+    let date: String
 }
 
-struct Hourly: Decodable {
+struct Hourly: Codable {
     let time: String
     let windspeedKmph: String
     let winddir16Point: String

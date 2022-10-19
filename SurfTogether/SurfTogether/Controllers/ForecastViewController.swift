@@ -7,12 +7,8 @@
 
 import UIKit
 
-class ForecastViewController: UIViewController {
-
-    var forecastManager = ForecastManager()
+class ForecastViewController: UIViewController, ForecastManagerDelegate {
     
-    
-
     @IBOutlet weak var swellDirectionView: UIView!
     @IBOutlet weak var waveHeightView: UIView!
     @IBOutlet weak var wavePeriodView: UIView!
@@ -25,17 +21,47 @@ class ForecastViewController: UIViewController {
     @IBOutlet weak var windSpeedLabel: UILabel!
     @IBOutlet weak var windDirectionLabel: UILabel!
     
+    var dayIdx: Int = 0
+    var hourIdx: Int = 0
+    
+    var forecastManager = ForecastManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
+        fetchWeather()
+        
+    }
+    
+    func configureUI() {
         swellDirectionView.layer.cornerRadius = 12
         waveHeightView.layer.cornerRadius = 12
         wavePeriodView.layer.cornerRadius = 12
         windView.layer.cornerRadius = 12
-        forecastManager.fetchForecast()
-       // rulerImage.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+        rulerImage.transform = CGAffineTransform(rotationAngle: .pi/2)
     }
     
-
-   
-
+    func fetchWeather() {
+        forecastManager.delegate = self
+        forecastManager.hourlyIndex = hourIdx
+        forecastManager.weatherIndex = dayIdx
+        forecastManager.fetchForecast()
+    }
+    
+    func didUpdateForecast(forecast: ForecastModel) {
+        DispatchQueue.main.async {
+            self.swellDirectionLabel.text = forecast.swellDir
+            self.waveHeightLabel.text = "\(forecast.swellHeight)m"
+            self.wavePeriodLabel.text = "\(forecast.swellPeriod)s"
+            self.windSpeedLabel.text = "\(forecast.windSpeed)km/h"
+            self.windDirectionLabel.text = forecast.windDir
+        }
+        
+    }
+    
+    
+    
 }
+
+
+

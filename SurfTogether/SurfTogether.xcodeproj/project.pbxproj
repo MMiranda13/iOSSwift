@@ -22,6 +22,7 @@
 		1355E94828C209EF00546F57 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 1355E94728C209EF00546F57 /* FirebaseStorageCombine-Community */; };
 		1355E94A28C2367A00546F57 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1355E94928C2367A00546F57 /* ProfileViewController.swift */; };
 		135D222F28E5E84D0016C36C /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135D222E28E5E84D0016C36C /* ForecastViewController.swift */; };
+		13679A6328FD568900957C7D /* DayHourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13679A6228FD568800957C7D /* DayHourViewController.swift */; };
 		1370792028CF811000102FB0 /* QuiverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370791E28CF811000102FB0 /* QuiverCell.swift */; };
 		1370792128CF811000102FB0 /* QuiverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1370791F28CF811000102FB0 /* QuiverCell.xib */; };
 		1386A55B28C0BC8E00BE7818 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1386A55A28C0BC8E00BE7818 /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 		1386A57128C10A2600BE7818 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1386A57028C10A2600BE7818 /* LoginViewController.swift */; };
 		138B771728D09DB40083F394 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138B771628D09DB40083F394 /* AddViewController.swift */; };
 		138B771928D0B62A0083F394 /* UserModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138B771828D0B62A0083F394 /* UserModels.swift */; };
+		13A4F1D928F709130001E42E /* ForecastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A4F1D828F709130001E42E /* ForecastModel.swift */; };
 		13B7277528DB63140019F2FD /* WetsuitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7277328DB63140019F2FD /* WetsuitCell.swift */; };
 		13B7277628DB63140019F2FD /* WetsuitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B7277428DB63140019F2FD /* WetsuitCell.xib */; };
 		13C529F428E1EECB00CA0C4E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C529F328E1EECB00CA0C4E /* SettingsViewController.swift */; };
@@ -46,6 +48,7 @@
 		1355E93428C2084200546F57 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1355E94928C2367A00546F57 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		135D222E28E5E84D0016C36C /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
+		13679A6228FD568800957C7D /* DayHourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayHourViewController.swift; sourceTree = "<group>"; };
 		1370791E28CF811000102FB0 /* QuiverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuiverCell.swift; sourceTree = "<group>"; };
 		1370791F28CF811000102FB0 /* QuiverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuiverCell.xib; sourceTree = "<group>"; };
 		1386A55728C0BC8E00BE7818 /* SurfTogether.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurfTogether.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +63,7 @@
 		1386A57028C10A2600BE7818 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		138B771628D09DB40083F394 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		138B771828D0B62A0083F394 /* UserModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModels.swift; sourceTree = "<group>"; };
+		13A4F1D828F709130001E42E /* ForecastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastModel.swift; sourceTree = "<group>"; };
 		13B7277328DB63140019F2FD /* WetsuitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WetsuitCell.swift; sourceTree = "<group>"; };
 		13B7277428DB63140019F2FD /* WetsuitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WetsuitCell.xib; sourceTree = "<group>"; };
 		13C529F328E1EECB00CA0C4E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 				138B771828D0B62A0083F394 /* UserModels.swift */,
 				131A407728EC811E00844041 /* ForecastManager.swift */,
 				13FC78FE28F0790E000C355F /* ForecastData.swift */,
+				13A4F1D828F709130001E42E /* ForecastModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -108,6 +113,7 @@
 				138B771628D09DB40083F394 /* AddViewController.swift */,
 				13C529F328E1EECB00CA0C4E /* SettingsViewController.swift */,
 				135D222E28E5E84D0016C36C /* ForecastViewController.swift */,
+				13679A6228FD568800957C7D /* DayHourViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -252,6 +258,7 @@
 				138B771728D09DB40083F394 /* AddViewController.swift in Sources */,
 				1370792028CF811000102FB0 /* QuiverCell.swift in Sources */,
 				1386A55B28C0BC8E00BE7818 /* AppDelegate.swift in Sources */,
+				13A4F1D928F709130001E42E /* ForecastModel.swift in Sources */,
 				1386A55D28C0BC8E00BE7818 /* SceneDelegate.swift in Sources */,
 				1386A57128C10A2600BE7818 /* LoginViewController.swift in Sources */,
 				1314A85228C9E4410070ADA6 /* QuiverViewController.swift in Sources */,
@@ -259,6 +266,7 @@
 				131A407828EC811E00844041 /* ForecastManager.swift in Sources */,
 				1386A56F28C0F12900BE7818 /* RegisterViewController.swift in Sources */,
 				135D222F28E5E84D0016C36C /* ForecastViewController.swift in Sources */,
+				13679A6328FD568900957C7D /* DayHourViewController.swift in Sources */,
 				13FC78FF28F0790E000C355F /* ForecastData.swift in Sources */,
 				13C529F428E1EECB00CA0C4E /* SettingsViewController.swift in Sources */,
 			);

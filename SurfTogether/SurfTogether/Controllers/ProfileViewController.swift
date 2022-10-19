@@ -35,7 +35,6 @@ class ProfileViewController: UIViewController {
         var users: [User] = [
             User(username: "", email: "", level: "", friends: 0)
         ]
-   // var user = User(username: "JosePeneda", email: "afea", level: "ola", friends: 0, quiver: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()

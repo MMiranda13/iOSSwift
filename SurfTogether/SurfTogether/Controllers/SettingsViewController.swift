@@ -24,6 +24,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate,UIPickerVie
         pickerView.delegate = self
         pickerView.dataSource = self
         surfLevelTextField.inputView = pickerView
+        
     }
     @IBAction func updateButton(_ sender: UIButton) {
         
