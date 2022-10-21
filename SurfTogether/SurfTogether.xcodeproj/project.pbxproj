@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1314A85228C9E4410070ADA6 /* QuiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1314A85128C9E4410070ADA6 /* QuiverViewController.swift */; };
 		131A407828EC811E00844041 /* ForecastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131A407728EC811E00844041 /* ForecastManager.swift */; };
+		131F2ACD2901859600E46BB2 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131F2ACC2901859500E46BB2 /* CalendarViewController.swift */; };
 		133AA0B528D88593007C672B /* iOSDropDown in Frameworks */ = {isa = PBXBuildFile; productRef = 133AA0B428D88593007C672B /* iOSDropDown */; };
 		1355E93528C2084200546F57 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1355E93428C2084200546F57 /* GoogleService-Info.plist */; };
 		1355E93828C209EF00546F57 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1355E93728C209EF00546F57 /* FirebaseAuth */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		1314A85128C9E4410070ADA6 /* QuiverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuiverViewController.swift; sourceTree = "<group>"; };
 		131A407728EC811E00844041 /* ForecastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastManager.swift; sourceTree = "<group>"; };
+		131F2ACC2901859500E46BB2 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		1355E93428C2084200546F57 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1355E94928C2367A00546F57 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		135D222E28E5E84D0016C36C /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				13C529F328E1EECB00CA0C4E /* SettingsViewController.swift */,
 				135D222E28E5E84D0016C36C /* ForecastViewController.swift */,
 				13679A6228FD568800957C7D /* DayHourViewController.swift */,
+				131F2ACC2901859500E46BB2 /* CalendarViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				138B771728D09DB40083F394 /* AddViewController.swift in Sources */,
 				1370792028CF811000102FB0 /* QuiverCell.swift in Sources */,
 				1386A55B28C0BC8E00BE7818 /* AppDelegate.swift in Sources */,
+				131F2ACD2901859600E46BB2 /* CalendarViewController.swift in Sources */,
 				13A4F1D928F709130001E42E /* ForecastModel.swift in Sources */,
 				1386A55D28C0BC8E00BE7818 /* SceneDelegate.swift in Sources */,
 				1386A57128C10A2600BE7818 /* LoginViewController.swift in Sources */,

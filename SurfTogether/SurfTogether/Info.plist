@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSContactsUsageDescription</key>
+	<string>We&apos;d like to access your contacts list</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Can we access your Reminders?</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>“We’d like to access your calendar to add relevant events” </string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

@@ -240,6 +240,9 @@
                                         </accessibility>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" image="Calendar" imagePadding="0.0"/>
+                                        <connections>
+                                            <segue destination="bpU-DL-4VG" kind="show" id="TRd-a3-cn5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
@@ -541,7 +544,71 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2R-Pq-AKX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6348" y="248"/>
+            <point key="canvasLocation" x="6348" y="481"/>
+        </scene>
+        <!--Calendar View Controller-->
+        <scene sceneID="V8T-ji-mJh">
+            <objects>
+                <viewController id="bpU-DL-4VG" customClass="CalendarViewController" customModule="SurfTogether" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IHi-B2-A7e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ooj-iY-FQw">
+                                <rect key="frame" x="56" y="597" width="302" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="GuM-I5-NwF"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add Surf Session">
+                                    <backgroundConfiguration key="background" cornerRadius="50" strokeWidth="2" strokeOutset="0.0">
+                                        <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="strokeColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="Galvji-Bold" family="Galvji" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addSurfSessionPressed:" destination="bpU-DL-4VG" eventType="touchUpInside" id="g5i-B3-jCt"/>
+                                    <action selector="updateButton:" destination="u5B-DN-ER9" eventType="touchUpInside" id="2zD-ii-fLa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your availability and show your friends:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Doh-qP-Acc">
+                                <rect key="frame" x="37" y="322" width="340" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="sSX-BC-dpZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gyf-Q7-JHC">
+                                <rect key="frame" x="87" y="183" width="241.5" height="129"/>
+                                <color key="tintColor" red="0.4519475698" green="0.45200324060000002" blue="0.45192193980000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gyf-Q7-JHC" secondAttribute="height" multiplier="238:129" id="0FZ-3b-6pt"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FOT-Az-wvP"/>
+                        <color key="backgroundColor" name="blue"/>
+                        <constraints>
+                            <constraint firstItem="FOT-Az-wvP" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ooj-iY-FQw" secondAttribute="bottom" constant="15" id="11R-JL-8Zb"/>
+                            <constraint firstItem="gyf-Q7-JHC" firstAttribute="leading" secondItem="FOT-Az-wvP" secondAttribute="leading" constant="87" id="34l-ha-gIq"/>
+                            <constraint firstItem="Ooj-iY-FQw" firstAttribute="top" secondItem="Doh-qP-Acc" secondAttribute="bottom" constant="55" id="9pn-7a-cOV"/>
+                            <constraint firstItem="Doh-qP-Acc" firstAttribute="leading" secondItem="FOT-Az-wvP" secondAttribute="leading" constant="37" id="DrB-wZ-PLL"/>
+                            <constraint firstItem="gyf-Q7-JHC" firstAttribute="top" secondItem="FOT-Az-wvP" secondAttribute="top" constant="181.5" id="F50-PQ-CYo"/>
+                            <constraint firstItem="gyf-Q7-JHC" firstAttribute="centerX" secondItem="FOT-Az-wvP" secondAttribute="centerX" id="FGB-J5-wNM"/>
+                            <constraint firstItem="Ooj-iY-FQw" firstAttribute="centerX" secondItem="FOT-Az-wvP" secondAttribute="centerX" id="Vu9-O8-x0e"/>
+                            <constraint firstItem="Doh-qP-Acc" firstAttribute="centerX" secondItem="FOT-Az-wvP" secondAttribute="centerX" id="bBP-eI-dMZ"/>
+                            <constraint firstItem="Ooj-iY-FQw" firstAttribute="leading" secondItem="FOT-Az-wvP" secondAttribute="leading" constant="56" id="rbb-4Q-Vlt"/>
+                            <constraint firstItem="Doh-qP-Acc" firstAttribute="top" secondItem="gyf-Q7-JHC" secondAttribute="bottom" constant="10.5" id="xxO-8R-cdL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Pyy-vi-7Dc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tot-pI-32l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4095.652173913044" y="549.77678571428567"/>
         </scene>
         <!--Day Hour View Controller-->
         <scene sceneID="04m-lm-mCU">
@@ -651,7 +718,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wMa-0B-h18" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4877" y="205"/>
+            <point key="canvasLocation" x="4967" y="481"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="iMG-tN-3XY">
@@ -748,7 +815,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oqw-Y7-gD6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4098" y="-783"/>
+            <point key="canvasLocation" x="4035" y="-415"/>
         </scene>
         <!--Quiver View Controller-->
         <scene sceneID="Yan-Mh-0p7">
@@ -864,7 +931,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SsI-7t-aS3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4968" y="-454"/>
+            <point key="canvasLocation" x="4967" y="-358"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="zbD-NR-KkA">
@@ -964,7 +1031,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gjh-E1-Mkc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6349" y="-454"/>
+            <point key="canvasLocation" x="6348" y="-358"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="IVr-HP-wPI">
@@ -1064,6 +1131,7 @@
         <image name="Quiver-6" width="300" height="100"/>
         <image name="Surf-4" width="1024" height="1024"/>
         <image name="alternatingcurrent" catalog="system" width="128" height="49"/>
+        <image name="calendar.badge.plus" catalog="system" width="128" height="108"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="location.circle" catalog="system" width="128" height="121"/>
         <image name="mappin" catalog="system" width="105" height="128"/>
