@@ -21,6 +21,11 @@ class ForecastViewController: UIViewController, ForecastManagerDelegate {
     @IBOutlet weak var windSpeedLabel: UILabel!
     @IBOutlet weak var windDirectionLabel: UILabel!
     
+    @IBOutlet weak var loadingActivity: UIActivityIndicatorView!
+    @IBOutlet weak var loadingLayer: UIVisualEffectView?
+    
+    
+    
     var dayIdx: Int = 0
     var hourIdx: Int = 0
     
@@ -28,6 +33,9 @@ class ForecastViewController: UIViewController, ForecastManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        showLoading(true)
+        
         configureUI()
         fetchWeather()
         
@@ -46,6 +54,7 @@ class ForecastViewController: UIViewController, ForecastManagerDelegate {
         forecastManager.hourlyIndex = hourIdx
         forecastManager.weatherIndex = dayIdx
         forecastManager.fetchForecast()
+        self.showLoading(false)
     }
     
     func didUpdateForecast(forecast: ForecastModel) {
@@ -57,8 +66,28 @@ class ForecastViewController: UIViewController, ForecastManagerDelegate {
             self.windDirectionLabel.text = forecast.windDir
         }
         
+        
+        
     }
     
+    func showLoading(_ show: Bool) {
+        if show {
+            loadingLayer?.isHidden = false
+            loadingActivity.startAnimating()
+        } else {
+            loadingActivity.stopAnimating()
+            
+        }
+        
+        let animationDuration = show ? 0.0 : 0.9999
+        
+        UIView.animate(withDuration: animationDuration, animations: { [weak self] in
+            self?.loadingLayer?.alpha = show ? 1.0 : 0.0
+        }, completion: { [weak self] _ in
+            self?.loadingLayer?.isHidden = !show
+        })
+        
+    }
     
     
 }

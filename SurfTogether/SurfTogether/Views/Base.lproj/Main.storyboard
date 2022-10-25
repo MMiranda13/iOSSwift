@@ -224,7 +224,7 @@
             <objects>
                 <viewController id="NkX-r0-6nE" customClass="ProfileViewController" customModule="SurfTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sNF-hw-wyM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Rx-V4-21K">
@@ -332,13 +332,13 @@
                                 <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                             </view>
                             <visualEffectView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXy-lv-CKE">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="906"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lv4-Yv-Igq">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="906"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <activityIndicatorView hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="tI1-9i-qr9">
-                                            <rect key="frame" x="188.5" y="385.5" width="37" height="37"/>
+                                            <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="tI1-9i-qr9" secondAttribute="height" multiplier="1:1" id="CUD-5d-Vhn"/>
@@ -394,7 +394,7 @@
             <objects>
                 <viewController id="fj5-Vt-qMj" customClass="ForecastViewController" customModule="SurfTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mf8-Z5-R19">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Forecast-3" translatesAutoresizingMaskIntoConstraints="NO" id="bdl-f1-UAm">
@@ -524,12 +524,37 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <visualEffectView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0YT-mr-tIm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hJN-Th-9Yc">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <activityIndicatorView hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ATN-vc-Fly">
+                                            <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="ATN-vc-Fly" secondAttribute="height" multiplier="1:1" id="V5K-Sr-WVJ"/>
+                                            </constraints>
+                                            <color key="color" systemColor="systemBlueColor"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ATN-vc-Fly" firstAttribute="centerY" secondItem="hJN-Th-9Yc" secondAttribute="centerY" id="Dc8-qa-JxW"/>
+                                        <constraint firstItem="ATN-vc-Fly" firstAttribute="centerX" secondItem="hJN-Th-9Yc" secondAttribute="centerX" id="ZUI-lb-H1U"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="systemUltraThinMaterial"/>
+                            </visualEffectView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UW0-Vd-DlP"/>
                         <color key="backgroundColor" red="0.4519475698" green="0.45200324060000002" blue="0.45192193980000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="OZs-UD-drj"/>
                     <connections>
+                        <outlet property="loadingActivity" destination="ATN-vc-Fly" id="XeK-D9-zHc"/>
+                        <outlet property="loadingLayer" destination="0YT-mr-tIm" id="jpr-Xn-xL1"/>
                         <outlet property="rulerImage" destination="0dJ-d5-Rf4" id="H5y-ld-Oa7"/>
                         <outlet property="swellDirectionLabel" destination="btt-zd-ZUx" id="s6N-Yu-Pvf"/>
                         <outlet property="swellDirectionView" destination="JF1-Bn-R1j" id="pl3-pn-PdZ"/>
@@ -544,18 +569,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2R-Pq-AKX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6348" y="481"/>
+            <point key="canvasLocation" x="6347.826086956522" y="480.80357142857139"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="V8T-ji-mJh">
             <objects>
                 <viewController id="bpU-DL-4VG" customClass="CalendarViewController" customModule="SurfTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IHi-B2-A7e">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ooj-iY-FQw">
-                                <rect key="frame" x="56" y="597" width="302" height="70"/>
+                                <rect key="frame" x="56" y="641" width="302" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="GuM-I5-NwF"/>
                                 </constraints>
@@ -573,7 +598,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your availability and show your friends:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Doh-qP-Acc">
-                                <rect key="frame" x="37" y="322" width="340" height="220"/>
+                                <rect key="frame" x="37" y="366" width="340" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="sSX-BC-dpZ"/>
                                 </constraints>
@@ -582,7 +607,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gyf-Q7-JHC">
-                                <rect key="frame" x="87" y="183" width="241.5" height="129"/>
+                                <rect key="frame" x="87" y="227" width="241.5" height="129"/>
                                 <color key="tintColor" red="0.4519475698" green="0.45200324060000002" blue="0.45192193980000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gyf-Q7-JHC" secondAttribute="height" multiplier="238:129" id="0FZ-3b-6pt"/>
@@ -615,7 +640,7 @@
             <objects>
                 <viewController id="cus-CJ-Ywf" customClass="DayHourViewController" customModule="SurfTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lmS-QO-exZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chose Day and Hour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymB-nh-paF">
@@ -725,11 +750,11 @@
             <objects>
                 <viewController id="u5B-DN-ER9" customClass="SettingsViewController" customModule="SurfTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TEy-r5-KqQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPg-I2-wa2">
-                                <rect key="frame" x="56" y="464" width="302" height="70"/>
+                                <rect key="frame" x="56" y="508" width="302" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="4Re-7O-d9K"/>
                                 </constraints>
@@ -746,7 +771,7 @@
                                 </connections>
                             </button>
                             <textField contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Surf Level" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d4b-Mj-6xz">
-                                <rect key="frame" x="56" y="158" width="302" height="39"/>
+                                <rect key="frame" x="56" y="202" width="302" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="yTC-6U-2eN"/>
                                 </constraints>
@@ -771,7 +796,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update your Settings!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGJ-N6-ZhO">
-                                <rect key="frame" x="36.5" y="44" width="341" height="47"/>
+                                <rect key="frame" x="36.5" y="88" width="341" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="WGJ-N6-ZhO" secondAttribute="height" multiplier="341:47" id="Noc-bf-3Y6"/>
                                 </constraints>
@@ -780,7 +805,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YaR-60-I5m">
-                                <rect key="frame" x="56" y="251" width="302" height="39"/>
+                                <rect key="frame" x="56" y="295" width="302" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="8xj-HE-7kf"/>
                                 </constraints>
@@ -822,7 +847,7 @@
             <objects>
                 <viewController id="rix-FV-bJy" customClass="QuiverViewController" customModule="SurfTogether" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9FJ-AS-Llw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtT-bH-ZaO">
@@ -1121,7 +1146,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="SVX-gm-d50"/>
+        <segue reference="Sad-ti-UAe"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Calendar" width="367" height="281"/>

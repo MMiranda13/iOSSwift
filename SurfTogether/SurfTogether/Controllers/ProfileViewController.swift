@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
-import SwiftUI
+//import SwiftUI
 
 class ProfileViewController: UIViewController {
     

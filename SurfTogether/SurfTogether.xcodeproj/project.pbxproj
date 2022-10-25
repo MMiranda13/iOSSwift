@@ -28,7 +28,6 @@
 		1370792128CF811000102FB0 /* QuiverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1370791F28CF811000102FB0 /* QuiverCell.xib */; };
 		1386A55B28C0BC8E00BE7818 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1386A55A28C0BC8E00BE7818 /* AppDelegate.swift */; };
 		1386A55D28C0BC8E00BE7818 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1386A55C28C0BC8E00BE7818 /* SceneDelegate.swift */; };
-		1386A55F28C0BC8E00BE7818 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1386A55E28C0BC8E00BE7818 /* ViewController.swift */; };
 		1386A56228C0BC8E00BE7818 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1386A56028C0BC8E00BE7818 /* Main.storyboard */; };
 		1386A56428C0BC9000BE7818 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1386A56328C0BC9000BE7818 /* Assets.xcassets */; };
 		1386A56728C0BC9000BE7818 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1386A56528C0BC9000BE7818 /* LaunchScreen.storyboard */; };
@@ -56,7 +55,6 @@
 		1386A55728C0BC8E00BE7818 /* SurfTogether.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurfTogether.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1386A55A28C0BC8E00BE7818 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1386A55C28C0BC8E00BE7818 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1386A55E28C0BC8E00BE7818 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1386A56128C0BC8E00BE7818 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1386A56328C0BC9000BE7818 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1386A56628C0BC9000BE7818 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 		1355E93228C2066500546F57 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1386A55E28C0BC8E00BE7818 /* ViewController.swift */,
 				1386A56E28C0F12900BE7818 /* RegisterViewController.swift */,
 				1386A57028C10A2600BE7818 /* LoginViewController.swift */,
 				1355E94928C2367A00546F57 /* ProfileViewController.swift */,
@@ -257,7 +254,6 @@
 			files = (
 				13B7277528DB63140019F2FD /* WetsuitCell.swift in Sources */,
 				1355E94A28C2367A00546F57 /* ProfileViewController.swift in Sources */,
-				1386A55F28C0BC8E00BE7818 /* ViewController.swift in Sources */,
 				138B771728D09DB40083F394 /* AddViewController.swift in Sources */,
 				1370792028CF811000102FB0 /* QuiverCell.swift in Sources */,
 				1386A55B28C0BC8E00BE7818 /* AppDelegate.swift in Sources */,
